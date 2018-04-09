@@ -30,4 +30,6 @@
     <filter root="/apps/msm/we-retail/blueprintconfigs/weretail-italian"/>
     <filter root="/apps/msm/we-retail/blueprintconfigs/weretail-spanish"/>
 
+    <filter root="/apps/datalayer"/>
+
 </workspaceFilter>

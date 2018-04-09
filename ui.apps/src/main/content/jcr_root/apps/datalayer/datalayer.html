@@ -1,0 +1,8 @@
+<meta data-sly-template.generate >
+<script type="text/javascript" data-sly-use.datalayer="${ '/apps/datalayer/datalayer.js'}">
+window.digitalData = ${datalayer.init @context='unsafe'};
+window.digitalData.page.pageInfo.referringURL = document.referrer;
+window.digitalData.page.pageInfo.sysEnv = navigator.userAgent;
+</script>
+</meta>
+<sly data-sly-unwrap data-sly-call="${generate}"/>
