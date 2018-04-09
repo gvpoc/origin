@@ -26,6 +26,11 @@
             'price',
             'color',
             'size',
+            'brand',
+            'material',
+            'shape',
+            'gender',
+            'type',
             'isVisible'
         ],
         compiled: function () {
@@ -37,6 +42,7 @@
                 }
 
                 if (vm[filter]) {
+                    console.log('switching on ' + filter);
                     switch (filter) {
                         case 'price':
                             var pricesList = vm[filter].split(',');
@@ -173,14 +179,14 @@
             others = [];
 
         _.each(sizes, function(item) {
-           if(!isNaN(item)) {
-               numbers.push(item)
-           } else if(_.contains(dualSizesRef, item)) {
-               dualSizes.push(item);
-           }
-           else {
-               others.push(item);
-           }
+            if(!isNaN(item)) {
+                numbers.push(item)
+            } else if(_.contains(dualSizesRef, item)) {
+                dualSizes.push(item);
+            }
+            else {
+                others.push(item);
+            }
         });
 
         dualSizes.sort(function(a, b) {

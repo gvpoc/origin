@@ -26,7 +26,12 @@
         this.data = data || {
             color: [],
             price: [],
-            size: []
+            size: [],
+            brand: [],
+            material: [],
+            shape: [],
+            gender: [],
+            type: []
         }
     };
 
@@ -56,6 +61,7 @@
             },
             methods: {
                 onFilterClick: function (prop, val, event) {
+                    console.log("filter click for " + prop + " with val " + val);
                     if (!this.$parent.activeFilters[prop]) {
                         this.$parent.activeFilters[prop] = [];
                     }
