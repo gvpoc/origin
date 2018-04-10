@@ -1,0 +1,28 @@
+<div class="Box" data-sly-use.comp="com.adobe.aem.guides.wknd.components.PromotionalCondition"
+	 data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+	<h3>${comp.title}</h3>
+	<p class="Introduction"><small>${comp.description}</small></p>
+
+	<table class="Table Table--features">
+		<tbody>
+		<sly data-sly-list.promoListItem="${comp.promoproducts.listChildren}">
+			<tr>
+				<td>${promoListItem.productdescription}</td>
+				<td width="60"><del>${promoListItem.productoldprice}.-</del></td>
+				<td width="60">${promoListItem.productcurrentprice}.-</td>
+			</tr>
+		</sly>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td>U betaalt voor uw bril</td>
+			<td class="totaal-korting"><del>${comp.totalExlPromo}.-</del></td>
+			<td class="totaal">${comp.totalPrice}.-</td>
+		</tr>
+		</tfoot>
+	</table>
+</div>
+<!-- .Box -->
+<p>
+	<button class="Button Button--secondary">Bibendum sodales</button>
+</p>
