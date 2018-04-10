@@ -110,8 +110,8 @@
                     });
                 },
                 setProduct: function (event) {
-                    var name = event.currentTarget.attributes['name'].value;
-                    var value = event.currentTarget.attributes['value'].value;
+                    var name = event.target.name;
+                    var value = event.target.value;
                     this._setProduct(name, value);
 
                     if (name == 'color') {
@@ -198,7 +198,7 @@
                     }
 
                     if (!done) {
-                        history.pushState(null, null, '#' + self.product.sku);
+                        history.pushState(null, null, '#' + sku);
                     }
                 }
             }
