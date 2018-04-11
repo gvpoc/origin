@@ -4,4 +4,4 @@
     jcr:description="Promotional Condition Component"
     jcr:primaryType="cq:Component"
     jcr:title="Promotional Condition"
-    componentGroup="We.Retail Commerce"/>
+    componentGroup="We.Optical"/>
