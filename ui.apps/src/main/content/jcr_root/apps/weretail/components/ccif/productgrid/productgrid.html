@@ -19,6 +19,7 @@
     <h1 data-sly-test.title="${category.title}">${category.title}</h1>
     <h1 data-sly-test="${!title}">${'All products' @ i18n}</h1>
 </div>
+
 <div class="we-product-grid-container">
     <ul data-sly-list.product="${category.products}" class="foundation-ordered-list-container">
         <li class="foundation-list-item">
@@ -35,7 +36,7 @@
                     <div class="we-ProductsGrid-item-image img-center">
                         <div class="cmp cmp-image">
                             <div class="cq-dd-image">
-                                <img src="${product.imageUrl}" class="img-responsive"/>
+                                <img src="http://s7g3.scene7.com/is/image/AndrejSokoll/${product.sku}_002?$gv_product-list-thumb$" class="img-responsive"/>
                             </div>
                         </div>
                     </div>
@@ -56,5 +57,14 @@
                 <!-- /.we-ProductsGrid-item -->
             </we-product-item>
         </li>
+
+        <!--
+        <li class="foundation-list-item">
+            <div class="we-ProductsGrid-item">
+                <sly data-sly-test.resourcePath="${'par{0}' @format=[itemList.index]}"></sly>
+                <div data-sly-resource="${ resourcePath @ resourceType='wcm/foundation/components/parsys'}">
+                </div>
+        </li>
+        -->
     </ul>
 </div>

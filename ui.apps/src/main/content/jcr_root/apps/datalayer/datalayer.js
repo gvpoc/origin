@@ -35,9 +35,9 @@ use(function() {
             attributes: {},
             components: {}
         },
-        product: [{
+        product: {
             productInfo: {}
-        }],
+        },
         cart: {},
         user: [{
             profile: [{
@@ -181,14 +181,14 @@ use(function() {
 
         // product info is present on the product-page
         if (product != null) {
-            _data.product[0].productInfo.sku = String(product.getSKU());
-            _data.product[0].productInfo.title = String(product.getTitle());
-            _data.product[0].productInfo.description = String(product.getDescription());
-            _data.product[0].productInfo.brand = String(product.getProperty("brand",java.lang.String));
-            _data.product[0].productInfo.gender = String(product.getProperty("gender",java.lang.String));
-            _data.product[0].productInfo.material = String(product.getProperty("material",java.lang.String));
-            _data.product[0].productInfo.material = String(product.getProperty("shape",java.lang.String));
-            _data.product[0].productInfo.type = String(product.getProperty("type",java.lang.String));
+            _data.product.productInfo.sku = String(product.getSKU());
+            _data.product.productInfo.title = String(product.getTitle());
+            _data.product.productInfo.description = String(product.getDescription());
+            _data.product.productInfo.brand = String(product.getProperty("brand",java.lang.String));
+            _data.product.productInfo.gender = String(product.getProperty("gender",java.lang.String));
+            _data.product.productInfo.material = String(product.getProperty("material",java.lang.String));
+            _data.product.productInfo.shape = String(product.getProperty("shape",java.lang.String));
+            _data.product.productInfo.type = String(product.getProperty("type",java.lang.String));
         }
 
         if (commerceSession != null) {

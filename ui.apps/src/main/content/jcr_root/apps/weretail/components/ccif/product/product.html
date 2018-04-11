@@ -48,8 +48,29 @@
                  data-sly-use.hapiProductAsset="${'org.apache.sling.hapi.sightly.HApiUse' @ type=hapiProduct.proptype.assets}"
                  data-sly-attribute="${hapiProduct.itemprop.assets}"> <!-- TODO: add zoom and slider -->
 
-                <img src="${productModel.productItem.imageUrl}" class="img-responsive" v-bind:src="product.image"
-                     data-sly-attribute="${hapiProductAsset.itemprop.path}"/>
+
+                <style type="text/css">
+                    #s7zoomviewer_div.s7zoomviewer{
+                        width:100%;
+                        height:auto;
+                    }
+                </style>
+                <script type="text/javascript" language="javascript" src="https://s7g3.scene7.com/s7viewers/html5/js/ZoomViewer.js"></script>
+
+                <div id="s7zoomviewer_div"></div>
+                <script type="text/javascript">
+                    var s7zoomviewer_div = new s7viewers.ZoomViewer({
+                        "containerId" : "s7zoomviewer_div",
+                        "params" : {
+                            "asset" : "AndrejSokoll/gv-${productModel.productItem.sku @ context='text'}-set",
+                            "serverurl" : "https://s7g3.scene7.com/is/image/",
+                            "contenturl": "https://s7g3.scene7.com/skins/",
+                            "config": "Scene7SharedAssets/Universal_HTML5_ImageSet_light",
+                            "config2": "companypreset"
+                        }	}).init();
+                </script>
+
+
 
                 <!--/*
                 <a href="#" class="we-Product-visual-zoom"><i class="we-Icon we-Icon--zoom-plus"></i> View larger</a>
@@ -140,9 +161,10 @@
                 </div>
 
                 Brand: ${productModel.productItem.brand}<br/>
-                gender: ${productModel.productItem.gender}<br/>
-                BASECURVE: ${productModel.productItem.basecurveValues}
-
+                Gender: ${productModel.productItem.gender}<br/>
+                Material: ${productModel.productItem.material}<br/>
+                Shape: ${productModel.productItem.shape}<br/>
+                Type: ${productModel.productItem.type}<br/>
 
             </form>
 
